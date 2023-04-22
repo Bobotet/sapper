@@ -1,38 +1,70 @@
+html, body, #root, .App {
+    height: 100%;
+}
 .App {
-  text-align: center;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.inf {
+    margin: 0 30px 0 15%;
+}
+.btn {
+    margin-bottom: 10px;
+}
+.cell {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: #968a89;
+    border-radius: 15px;
+    border: 2px solid #696160;
+    margin: 1px;
+    cursor: pointer;
+    transition: 300ms;
+    transition-property: transform;
+    transition-duration: 1s;
+    z-index: 2;
+    font-size: 0;
+    
+}
+.markedCell::before {
+    position: absolute;
+    font-size: 30px;
+    left: 12.5px;
+    top: 12.5px;
+
+    border-radius: 15px;
+    z-index: 100;
+    content: url('./assets/flag.png');    
+    /*content: '';
+    width: 25px;
+    height: 25px;
+    background-color: blue;*/
+    overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.board {
+    border-radius: 15px;
+    height: 560px;
+    border: 4px solid #696160;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.row {
+    display: flex;
+    flex-direction: row;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.mine {
+    background-color: red;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.openCell {
+    background-color: white;
+    text-align: center;
+    line-height: 50px;
+    font-size: 30px;
+    font-weight: 600;
 }
